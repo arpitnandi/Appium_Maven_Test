@@ -26,7 +26,7 @@ public class BaseClass
 		DCap.setCapability( "platformName" , cap.get( "platformName" ) );
 		DCap.setCapability( "platformVersion" , cap.get( "platformVersion" ) );
 		DCap.setCapability( "deviceName" , cap.get( "deviceName" ) );
-		DCap.setCapability( "app" , cap.get( "appPath" ) + cap.get( "app" ) + ".exe" );
+		DCap.setCapability( "app" , cap.get( "appPath" ) + cap.get( "app" ) );
 		DCap.setCapability( "automationName" , cap.get( "automationName" ) );
 		DCap.setCapability( "autoGrantPermissions" , Boolean.parseBoolean( cap.get( "autoGrantPermissions" ) ) );
 		

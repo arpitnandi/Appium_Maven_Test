@@ -9,8 +9,8 @@ import project.Utils.*;
 
 public class Test_00 extends BaseClass
 {
-	public static AppiumDriver<MobileElement> D = null;
-	public static Map<String, String> capabilities = null;
+	public AppiumDriver<MobileElement> D = null;
+	public Map<String, String> capabilities = null;
 	
 	@Given("^Open App with following configurations$")
 	public void Open_App_with_following_configurations( DataTable Config ) throws Throwable 

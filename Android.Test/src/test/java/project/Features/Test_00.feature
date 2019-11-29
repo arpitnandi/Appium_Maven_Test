@@ -15,14 +15,14 @@ Feature: Title of your feature
   @tag1
   Scenario: Title of your scenario
     Given Open App with following configurations
-    | URL                  | http://localhost:4723/wd/hub    |
-		| platformName         | Android                         |
-		| platformVersion      | 8                               |
-		| deviceName           | Pixel_XL_API_26                 |
-		| appPath              | D:\Download                     |
-		| app                  | Cleartrip_com.cleartrip.android |
-		| automationName       | UiAutomator2                    |
-		| autoGrantPermissions | true                            |
+    | URL                  | http://localhost:4723/wd/hub        |
+		| platformName         | Android                             |
+		| platformVersion      | 8.0                                 |
+		| deviceName           | Pixel_XL_API_26                     |
+		| appPath              | D:\Download                         |
+		| app                  | Cleartrip_com.cleartrip.android.exe |
+		| automationName       | UiAutomator2                        |
+		| autoGrantPermissions | true                                |
 		 
     And some other precondition
     When I complete action
