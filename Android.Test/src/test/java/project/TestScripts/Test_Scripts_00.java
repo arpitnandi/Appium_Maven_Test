@@ -7,7 +7,7 @@ import cucumber.api.java.en.*;
 import io.appium.java_client.*;
 import project.Utils.*;
 
-public class Test_00 extends BaseClass
+public class Test_Scripts_00 extends BaseClass
 {
 	public AppiumDriver<MobileElement> D = null;
 	public Map<String, String> capabilities = null;
