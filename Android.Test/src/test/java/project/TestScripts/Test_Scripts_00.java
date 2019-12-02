@@ -4,12 +4,10 @@ import java.util.*;
 
 import cucumber.api.*;
 import cucumber.api.java.en.*;
-import io.appium.java_client.*;
 import project.Utils.*;
 
 public class Test_Scripts_00 extends BaseClass
 {
-	public AppiumDriver<MobileElement> D = null;
 	public Map<String, String> capabilities = null;
 	
 	@Given("^Open App with following configurations$")
@@ -21,7 +19,11 @@ public class Test_Scripts_00 extends BaseClass
 	}
 
 	@Given("^some other precondition$")
-	public void some_other_precondition() throws Throwable {}
+	public void some_other_precondition() throws Throwable 
+	{
+		element( "id", "abc" ).click();
+		elements( "id", "xyz" ).get( 0 ).click();
+	}
 
 	@When("^I complete action$")
 	public void i_complete_action() throws Throwable {}

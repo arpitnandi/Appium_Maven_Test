@@ -17,7 +17,7 @@ Feature: Title of your feature
     Given Open App with following configurations
     | URL                  | http://localhost:4723/wd/hub        |
 		| platformName         | Android                             |
-		| platformVersion      | 8.0                                 |
+		| platformVersion      | 8                                   |
 		| deviceName           | Pixel_XL_API_26                     |
 		| appPath              | D:\Download                         |
 		| app                  | Cleartrip_com.cleartrip.android.exe |
