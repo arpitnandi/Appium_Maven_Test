@@ -17,6 +17,19 @@
   <dependencies>
     
     <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>3.141.59</version>
+    </dependency>
+   
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
       <groupId>io.appium</groupId>
       <artifactId>java-client</artifactId>
       <version>7.3.0</version>
@@ -72,25 +85,12 @@
       <artifactId>cucumber-core</artifactId>
       <version>1.2.5</version>
     </dependency>
-  
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-      <scope>test</scope>
-    </dependency>
- 
+
     <dependency>
       <groupId>info.cukes</groupId>
       <artifactId>cucumber-jvm-deps</artifactId>
       <version>1.0.5</version>
      <scope>provided</scope>
-    </dependency>
-  
-    <dependency>
-      <groupId>com.aventstack</groupId>
-      <artifactId>extentreports</artifactId>
-      <version>3.1.2</version>
     </dependency>
 
     <dependency>
@@ -98,6 +98,12 @@
       <artifactId>cucumber-jvm-deps</artifactId>
       <version>1.0.5</version>
       <scope>provided</scope>
+    </dependency>
+   
+    <dependency>
+      <groupId>com.aventstack</groupId>
+      <artifactId>extentreports</artifactId>
+      <version>3.1.2</version>
     </dependency>
  
     <dependency>

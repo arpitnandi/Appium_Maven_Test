@@ -1,43 +1,60 @@
-#Author: "arpitnandi1l@gmail.com"
-#Background: List of steps run before each of the scenarios
+#Author: "arpitnandi1@gmail.com"
+
 #""" (Doc Strings)
 #| (Data Tables)
 #@ (Tags/Labels):To group Scenarios
 #<> (placeholder)
-#""
+#"" (String Value)
 ## (Comments)
-#Sample Feature Definition Template
 
-@tag
-Feature: Title of your feature
-  I want to use this template for my feature file
 
-  @tag1
-  Scenario: Title of your scenario
-    Given Open App with following configurations
-    | URL                  | http://localhost:4723/wd/hub        |
-		| platformName         | Android                             |
-		| platformVersion      | 8                                   |
-		| deviceName           | Pixel_XL_API_26                     |
-		| appPath              | D:\Download                         |
-		| app                  | Cleartrip_com.cleartrip.android.exe |
-		| automationName       | UiAutomator2                        |
-		| autoGrantPermissions | true                                |
-		 
-    And some other precondition
-    When I complete action
-    And some other action
-    And yet another action
-    Then I validate the outcomes
-    And check more outcomes
+Feature: Select city for tour
 
-  @tag2
-  Scenario Outline: Title of your scenario outline
-    Given I want to write a step with <name>
-    When I check for the <value> in step
-    Then I verify the <status> in step
-
-    Examples: 
-      | name  | value | status  |
-      | name1 |     5 | success |
-      | name2 |     7 | Fail    |
+  Scenario Outline: Slide and select city from dash board
+    Given Session is started
+    | URL             | http://localhost:4723/wd/hub                                 |
+    | platformName    | Android                                                      |
+    | automationName  | UiAutomator2                                                 |
+    | platformVersion | 10.0                                                         |
+    | deviceName      | Pixel_XL_API_29                                              |
+    | app             | D:\Git_Share\Appium_Test00\Android.Test\cleartrip_19.2.1.apk |
+    | appPackage      | com.cleartrip.android                                        |
+    | appWaitActivity | com.cleartrip.android.activity.common.SplashActivity         |
+    When Started with dash board
+    Then Slide and click on the <City> block
+    And Verify the name of the selected <City>
+    And Navigate back to the dash board
+    And Close the application
+       
+    Examples:
+    | City    | Name           |
+    | GOA     | SEE ALL CITIES |
+    | MUMBAI  | SEE ALL CITIES |
+    | KOLKATA | SEE ALL CITIES |
+    
+    
+  Scenario Outline: Select city from All Cities search
+    Given Session is started
+    | URL             | http://localhost:4723/wd/hub                                 |
+    | platformName    | Android                                                      |
+    | automationName  | UiAutomator2                                                 |
+    | platformVersion | 10.0                                                         |
+    | deviceName      | Pixel_XL_API_29                                              |
+    | app             | D:\Git_Share\Appium_Test00\Android.Test\cleartrip_19.2.1.apk |
+    | appPackage      | com.cleartrip.android                                        |
+    | appWaitActivity | com.cleartrip.android.activity.common.SplashActivity         |
+    When Started with dash board
+    Then Scroll to <Name> button and click on it
+    And Type <City> inside the search edit
+    And Verify the search results for <City>
+    And Select the best matched search result
+    And Verify the name of the selected <City>
+    And Navigate back to the dash board
+    And Close the application
+       
+    Examples:
+    | City    | Name           |
+    | GOA     | SEE ALL CITIES |
+    | MUMBAI  | SEE ALL CITIES |
+    | KOLKATA | SEE ALL CITIES |
+    
