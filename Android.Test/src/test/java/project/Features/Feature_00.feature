@@ -5,7 +5,7 @@ Feature: Select city for tour
     | URL             | http://localhost:4723/wd/hub                                       |
     | platformName    | Android                                                            |
     | automationName  | UiAutomator2                                                       |
-    | platformVersion | 5.0                                                                |
+    | platformVersion | 5.1.1                                                              |
     | deviceName      | Galaxy_Nexus_API_22                                                |
     | app             | C:\Users\Admin\git\Appium_Test00\Android.Test\cleartrip_19.2.1.apk |
     | appPackage      | com.cleartrip.android                                              |
@@ -28,7 +28,7 @@ Feature: Select city for tour
     | URL             | http://localhost:4723/wd/hub                                       |
     | platformName    | Android                                                            |
     | automationName  | UiAutomator2                                                       |
-    | platformVersion | 5.0                                                                |
+    | platformVersion | 5.1.1                                                              |
     | deviceName      | Galaxy_Nexus_API_22                                                |
     | app             | C:\Users\Admin\git\Appium_Test00\Android.Test\cleartrip_19.2.1.apk |
     | appPackage      | com.cleartrip.android                                              |
