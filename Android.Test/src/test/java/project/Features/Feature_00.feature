@@ -6,10 +6,9 @@ Feature: Select city for tour
     | platformName    | Android                                                            |
     | automationName  | UiAutomator2                                                       |
     | platformVersion | 5.1.1                                                              |
-    | deviceName      | Galaxy_Nexus_API_22                                                |
+    | udid            | emulator-5554                                                      |
     | app             | C:\Users\Admin\git\Appium_Test00\Android.Test\cleartrip_19.2.1.apk |
-    | appPackage      | com.cleartrip.android                                              |
-    | appWaitActivity | com.cleartrip.android.activity.common.SplashActivity               |
+    | appWaitActivity | com.cleartrip.android.common.activities.CleartripHomeActivity      |
     When Started with dash board
     Then Slide and click on the <City> block
     And Verify the name of the selected <City>
@@ -17,10 +16,11 @@ Feature: Select city for tour
     And Close the application
        
     Examples:
-    | City    | Name           |
-    | GOA     | SEE ALL CITIES |
-    | MUMBAI  | SEE ALL CITIES |
-    | KOLKATA | SEE ALL CITIES |
+    | City      |
+    | GOA       |
+    | MUMBAI    |
+    | KOLKATA   |
+    | New Delhi |
     
     
   Scenario Outline: Select city from All Cities search
@@ -29,12 +29,12 @@ Feature: Select city for tour
     | platformName    | Android                                                            |
     | automationName  | UiAutomator2                                                       |
     | platformVersion | 5.1.1                                                              |
-    | deviceName      | Galaxy_Nexus_API_22                                                |
+    | udid            | emulator-5554                                                      |
     | app             | C:\Users\Admin\git\Appium_Test00\Android.Test\cleartrip_19.2.1.apk |
-    | appPackage      | com.cleartrip.android                                              |
-    | appWaitActivity | com.cleartrip.android.activity.common.SplashActivity               |
+    | appWaitActivity | com.cleartrip.android.common.activities.CleartripHomeActivity      |
     When Started with dash board
-    Then Scroll to <Name> button and click on it
+    Then Scroll to Name button and click on it
+    | Name | SEE ALL CITIES |
     And Type <City> inside the search edit
     And Verify the search results for <City>
     And Select the best matched search result
@@ -43,8 +43,9 @@ Feature: Select city for tour
     And Close the application
        
     Examples:
-    | City    | Name           |
-    | GOA     | SEE ALL CITIES |
-    | MUMBAI  | SEE ALL CITIES |
-    | KOLKATA | SEE ALL CITIES |
+    | City      |
+    | GOA       |
+    | MUMBAI    |
+    | KOLKATA   |
+    | New Delhi |
     

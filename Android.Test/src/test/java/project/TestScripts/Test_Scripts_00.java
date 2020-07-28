@@ -21,7 +21,7 @@ public class Test_Scripts_00 extends ProjectUtilities
 	protected Pages POM;
 	protected MobileActions Action;
 	
-	String[] Text = {"Incredible India","SEE ALL CITIES","Across the oceans"};
+	String Text = "Incredible India";
 	
 	
 	@Given("^Session is started$")
@@ -43,8 +43,6 @@ public class Test_Scripts_00 extends ProjectUtilities
 		
 		Wait.until(ExpectedConditions.elementToBeClickable(POM.Location_Dismiss));
 		POM.Location_Dismiss.click();
-		
-		Wait.until(ExpectedConditions.elementToBeClickable(POM.Indian_Cities.get(0)));
 	}
 
 	
@@ -54,6 +52,7 @@ public class Test_Scripts_00 extends ProjectUtilities
 		POM = new Pages(Driver);
 		Action = new MobileActions(Driver);
 		
+		Wait.until(ExpectedConditions.elementToBeClickable(POM.Indian_Cities.get(2)));
 		Action.slideAndSelectOne(POM.Indian_Cities, Name);
 	}
 
@@ -68,20 +67,23 @@ public class Test_Scripts_00 extends ProjectUtilities
 	}
 	
 	
-	@Then("^Scroll to (.*) button and click on it$")
-	public void Scroll_to_Name_button_and_click_on_it(String Name)
+	@Then("^Scroll to Name button and click on it$")
+	public void Scroll_to_Name_button_and_click_on_it(Map<String,String> Data) throws InterruptedException
 	{
+		String Name = Data.get("Name");
+		
 		Action = new MobileActions(Driver);
 		
-		Action.scrollDown(3);	
+		Action.scrollDown(3);
 		
 		Wait.until(ExpectedConditions.elementToBeClickable(super.findByText(Name)));
 		super.findByText(Name).click();
+		Thread.sleep(500);
 	}
 	
 
 	@Then("^Type (.*) inside the search edit$")
-	public void type_City_inside_the_search_edit(String Name) throws AWTException, InterruptedException
+	public void type_City_inside_the_search_edit(String City) throws AWTException, InterruptedException
 	{
 		POM = new Pages(Driver);
 		Action = new MobileActions(Driver);
@@ -89,8 +91,7 @@ public class Test_Scripts_00 extends ProjectUtilities
 		Wait.until(ExpectedConditions.visibilityOf(POM.Search_Edit));
 		Thread.sleep(100);
 
-		Action.roboTyping(Name);
-		
+		POM.Search_Edit.sendKeys(City);
 		Thread.sleep(200);
 	}
 
@@ -112,12 +113,13 @@ public class Test_Scripts_00 extends ProjectUtilities
 	
 	
 	@Then("^Select the best matched search result$")
-	public void Select_the_best_matched_search_result()
+	public void Select_the_best_matched_search_result() throws InterruptedException
 	{
 		POM = new Pages(Driver);
 		
 		Wait.until(ExpectedConditions.elementToBeClickable(POM.AutoSuggestedCities.get(0)));
 		POM.AutoSuggestedCities.get(0).click();
+		Thread.sleep(500);
 	}
 	
 	
@@ -130,11 +132,9 @@ public class Test_Scripts_00 extends ProjectUtilities
 		Wait.until(ExpectedConditions.elementToBeClickable(POM.Go_Back));
 		POM.Go_Back.click();
 		
-		Wait.until(ExpectedConditions.visibilityOf(POM.Navigation_Items));
-		Wait.until(ExpectedConditions.visibilityOf(POM.Navigation_Items));
+		Wait.until(ExpectedConditions.visibilityOfAllElements(POM.Navigation_Items));
 		
-		Action.scrollByText(Text[0]);
-		
+		Action.scrollUp(3);
 		Assert.assertTrue(POM.Incradible_India.isDisplayed());
 	}
 	

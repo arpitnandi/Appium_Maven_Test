@@ -41,7 +41,7 @@ public class MobileActions extends ProjectUtilities
 				
 		while(n>0)
 		{
-			Action.press(PointOption.point(Width/2,Height/5)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(200))).moveTo(PointOption.point(Width/2,Height*4/5)).release().perform();
+			Action.press(PointOption.point(Width/2,Height/4)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(250))).moveTo(PointOption.point(Width/2,Height*3/4)).release().perform();
 			n--;
 		}
 	}
@@ -58,9 +58,15 @@ public class MobileActions extends ProjectUtilities
 		
 		while(n>0)
 		{
-			Action.press(PointOption.point(Width/2,Height*4/5)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(200))).moveTo(PointOption.point(Width/2,Height/5)).release().perform();
+			Action.press(PointOption.point(Width/2,Height*3/4)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(250))).moveTo(PointOption.point(Width/2,Height/4)).release().perform();
 			n--;
 		}
+	}
+	
+	
+	public void scrollToElementById(MobileElement id)
+	{
+		Driver.findElement(MobileBy.AndroidUIAutomator("new IiScrollable(new UiScrollable(True)).scrollIntoView(new UiSelector().id("+ id +")))"));
 	}
 	
 	
@@ -104,12 +110,10 @@ public class MobileActions extends ProjectUtilities
 			
 			for(int i=0 ; i<E.size() ; i++)
 			{
-				System.out.println(E.get(i).getText());
 				if(E.get(i).getText().equalsIgnoreCase(Required))
 				{
 					E.get(i).click();
 					flag=false;
-					System.out.println(flag);
 					break;
 				}
 			}
