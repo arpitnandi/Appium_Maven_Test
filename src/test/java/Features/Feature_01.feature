@@ -17,9 +17,9 @@ Feature: Select city for tour 2
        
     Examples:
     | City      |
-    | GOA       |
-    | MUMBAI    |
-    | New Delhi |
+#    | GOA       |
+#    | MUMBAI    |
+#    | New Delhi |
     | KOLKATA   |
     
     
@@ -44,8 +44,8 @@ Feature: Select city for tour 2
        
     Examples:
     | City      |
-    | GOA       |
-    | MUMBAI    |
-    | New Delhi |
+#    | GOA       |
+#    | MUMBAI    |
+#    | New Delhi |
     | KOLKATA   |
     

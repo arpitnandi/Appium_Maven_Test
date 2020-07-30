@@ -18,9 +18,9 @@ Feature: Select city for tour 1
     Examples:
     | City      |
     | GOA       |
-    | MUMBAI    |
-    | New Delhi |
-    | KOLKATA   |
+#    | MUMBAI    |
+#    | New Delhi |
+#    | KOLKATA   |
     
     
   Scenario Outline: Select city from All Cities search
@@ -45,7 +45,7 @@ Feature: Select city for tour 1
     Examples:
     | City      |
     | GOA       |
-    | MUMBAI    |
-    | New Delhi |
-    | KOLKATA   |
+#    | MUMBAI    |
+#    | New Delhi |
+#    | KOLKATA   |
     
