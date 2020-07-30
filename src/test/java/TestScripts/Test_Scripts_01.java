@@ -15,7 +15,7 @@ import ProjectUtils.Uitilities;
 import cucumber.api.java.en.Then;
 
 
-public class TestScripts_01 extends Uitilities
+public class Test_Scripts_01 extends Uitilities
 {
 	protected Map<String, String> capabilities;
 	protected Pages POM;
