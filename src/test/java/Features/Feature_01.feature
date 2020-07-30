@@ -7,7 +7,7 @@ Feature: Select city for tour 2
     | automationName  | UiAutomator2                                                       |
     | platformVersion | 5.1.1                                                              |
     | udid            | emulator-5554                                                      |
-    | app             | C:\Users\Admin\git\Appium_Test00\Android.Test\cleartrip_19.2.1.apk |
+    | app             | C:\Users\Admin\git\Appium_Test00\cleartrip_19.2.1.apk |
     | appWaitActivity | com.cleartrip.android.common.activities.CleartripHomeActivity      |
     When Started with dash board
     Then Slide and click on the <City> block
