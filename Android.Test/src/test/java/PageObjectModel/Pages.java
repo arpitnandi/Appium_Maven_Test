@@ -1,4 +1,4 @@
-package project.PageObjectModal;
+package PageObjectModel;
 
 
 import java.util.List;

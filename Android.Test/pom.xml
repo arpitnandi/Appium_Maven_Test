@@ -52,12 +52,6 @@
       <groupId>net.masterthought</groupId>
       <artifactId>cucumber-reporting</artifactId>
       <version>4.9.0</version>
-    </dependency> 
-
-    <dependency>
-      <groupId>net.masterthought</groupId>
-      <artifactId>maven-cucumber-reporting</artifactId>
-      <version>4.9.0</version>
     </dependency>
   
     <dependency>
@@ -92,35 +86,10 @@
       <version>1.0.5</version>
      <scope>provided</scope>
     </dependency>
-
-    <dependency>
-      <groupId>info.cukes</groupId>
-      <artifactId>cucumber-jvm-deps</artifactId>
-      <version>1.0.5</version>
-      <scope>provided</scope>
-    </dependency>
  
     <dependency>
       <groupId>org.apache.poi</groupId>
       <artifactId>poi</artifactId>
-      <version>4.0.1</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.apache.poi</groupId>
-      <artifactId>poi-ooxml</artifactId>
-      <version>4.0.1</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.apache.poi</groupId>
-      <artifactId>poi-ooxml-schemas</artifactId>
-      <version>4.0.1</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.apache.poi</groupId>
-      <artifactId>poi-scratchpad</artifactId>
       <version>4.0.1</version>
     </dependency>
     

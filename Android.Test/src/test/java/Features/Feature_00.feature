@@ -1,4 +1,4 @@
-Feature: Select city for tour
+Feature: Select city for tour 1
 
   Scenario Outline: Slide and select city from dash board
     Given Session is started
@@ -18,9 +18,9 @@ Feature: Select city for tour
     Examples:
     | City      |
     | GOA       |
-    | MUMBAI    |
-    | KOLKATA   |
-    | New Delhi |
+#    | MUMBAI    |
+#    | New Delhi |
+#    | KOLKATA   |
     
     
   Scenario Outline: Select city from All Cities search
@@ -44,8 +44,8 @@ Feature: Select city for tour
        
     Examples:
     | City      |
-    | GOA       |
+#    | GOA       |
     | MUMBAI    |
-    | KOLKATA   |
-    | New Delhi |
+#    | New Delhi |
+#    | KOLKATA   |
     

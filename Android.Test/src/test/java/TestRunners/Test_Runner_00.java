@@ -1,4 +1,4 @@
-package project.TestRunners;
+package TestRunners;
 
 import org.junit.runner.RunWith;
 
@@ -7,11 +7,13 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith( Cucumber.class )
 @CucumberOptions(
-	features = "src\\test\\java\\project\\Features",
-	glue = { "project.TestScripts" },
+	features = "src\\test\\java\\Features",
+	glue = { "TestScripts" },
 	monochrome = true,
 	dryRun = false,
-	format = { "pretty", "html:target/Results" }
+	format = { "pretty",
+			"html:target/Results",
+			"junit:target/Results/Cucumber.html" }
 )
 
 public class Test_Runner_00 {

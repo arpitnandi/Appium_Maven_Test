@@ -1,4 +1,4 @@
-package project.Utils;
+package ProjectUtils;
 
 
 import java.net.MalformedURLException;
@@ -13,7 +13,7 @@ import io.appium.java_client.*;
 import io.appium.java_client.android.AndroidDriver;
 
 
-public class ProjectUtilities 
+public class Uitilities 
 {
 	protected static AppiumDriver<MobileElement> Driver;
 	protected static WebDriverWait Wait;
@@ -26,7 +26,7 @@ public class ProjectUtilities
 		DesiredCapabilities DCapabilities = new DesiredCapabilities();
 		DCapabilities.setCapability( "platformName" , Capabilities.get( "platformName" ) );
 		DCapabilities.setCapability( "automationName" , Capabilities.get( "automationName" ) );
-		DCapabilities.setCapability( "platformVersion" , Capabilities.get( "platformVersion" ) );
+//		DCapabilities.setCapability( "platformVersion" , Capabilities.get( "platformVersion" ) );
 		DCapabilities.setCapability( "udid" , Capabilities.get( "udid" ) );
 		DCapabilities.setCapability( "app" , Capabilities.get( "app" ) );
 		DCapabilities.setCapability( "appWaitActivity", Capabilities.get("appWaitActivity") );

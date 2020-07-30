@@ -1,4 +1,4 @@
-package project.Utils;
+package ProjectUtils;
 
 
 import java.awt.AWTException;
@@ -18,7 +18,7 @@ import io.appium.java_client.touch.offset.PointOption;
 
 
 @SuppressWarnings("rawtypes")
-public class MobileActions extends ProjectUtilities
+public class MobileActions extends Uitilities
 {
 	private AppiumDriver<MobileElement> Driver;
 	private TouchAction Action;
@@ -86,7 +86,7 @@ public class MobileActions extends ProjectUtilities
 		int x2 = E2.getLocation().getX() + E2.getSize().getWidth()/2;
 		int y2 = E2.getLocation().getY() + E2.getSize().getHeight()/2;
 		
-		Action.press(PointOption.point(x2, y2)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(200))).moveTo(PointOption.point(x1, y1)).release().perform();
+		Action.press(PointOption.point(x2, y2)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(250))).moveTo(PointOption.point(x1, y1)).release().perform();
 	}
 
 	
