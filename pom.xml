@@ -28,6 +28,12 @@
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
+    
+    <dependency>
+      <groupId>com.googlecode.json-simple</groupId>
+      <artifactId>json-simple</artifactId>
+      <version>1.1.1</version>
+    </dependency>
 
     <dependency>
       <groupId>io.appium</groupId>
@@ -86,12 +92,6 @@
       <version>1.0.5</version>
      <scope>provided</scope>
     </dependency>
- 
-    <dependency>
-      <groupId>org.apache.poi</groupId>
-      <artifactId>poi</artifactId>
-      <version>4.0.1</version>
-    </dependency>
     
     <dependency>
       <groupId>org.freemarker</groupId>
@@ -118,9 +118,31 @@
         <version>3.0.0-M5</version>
         <configuration>
           <include>
-            <excluide>**/*Test_Runner_00.java</excluide>
+            <excluide>**/*Runner*.java</excluide>
           </include>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>net.masterthought</groupId>
+        <artifactId>cucumber-reporting</artifactId>
+        <version>4.9.0</version>
+        <executions>
+          <execution>
+            <id>Execution</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <projectName>cucumber-jvm-example</projectName>
+              <outputDirectory>$(project.build.directory)/cucumber-jvm-report</outputDirectory>
+              <cucumberOutput>$(project.build.directory)/cucumber.json</cucumberOutput>
+              <skippedFails>true</skippedFails>
+              <enableFlashcharts>true</enableFlashcharts>
+              <buildNumber>001</buildNumber>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

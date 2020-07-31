@@ -41,7 +41,7 @@ public class MobileActions extends Uitilities
 				
 		while(n>0)
 		{
-			Action.press(PointOption.point(Width/2,Height/4)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(250))).moveTo(PointOption.point(Width/2,Height*3/4)).release().perform();
+			Action.press(PointOption.point(Width/2,Height/4)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(300))).moveTo(PointOption.point(Width/2,Height*3/4)).release().perform();
 			n--;
 		}
 	}
@@ -58,7 +58,7 @@ public class MobileActions extends Uitilities
 		
 		while(n>0)
 		{
-			Action.press(PointOption.point(Width/2,Height*3/4)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(250))).moveTo(PointOption.point(Width/2,Height/4)).release().perform();
+			Action.press(PointOption.point(Width/2,Height*3/4)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(300))).moveTo(PointOption.point(Width/2,Height/4)).release().perform();
 			n--;
 		}
 	}

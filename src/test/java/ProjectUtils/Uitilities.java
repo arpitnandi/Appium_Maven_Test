@@ -1,11 +1,13 @@
 package ProjectUtils;
 
 
-import java.net.MalformedURLException;
+import java.io.*;
 import java.net.URL;
-import java.util.*;
 import java.util.concurrent.TimeUnit;
 
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -19,19 +21,20 @@ public class Uitilities
 	protected static WebDriverWait Wait;
 	
 	
-	protected AppiumDriver<MobileElement> launchSession( Map<String, String> Capabilities, int Timeout, int Polling ) throws MalformedURLException, InterruptedException
+	protected AppiumDriver<MobileElement> launchSession(String Device, int Timeout, int Polling ) throws InterruptedException, IOException, ParseException
 	{
-		URL url = new URL( Capabilities.get( "URL" ) );
+		JSONObject Values = this.readProperties( System.getProperty("user.dir") + "/src/test/java/JSON_Properties/TestProperties.json" );
 		
-		DesiredCapabilities DCapabilities = new DesiredCapabilities();
-		DCapabilities.setCapability( "platformName" , Capabilities.get( "platformName" ) );
-		DCapabilities.setCapability( "automationName" , Capabilities.get( "automationName" ) );
-//		DCapabilities.setCapability( "platformVersion" , Capabilities.get( "platformVersion" ) );
-		DCapabilities.setCapability( "udid" , Capabilities.get( "udid" ) );
-		DCapabilities.setCapability( "app" , Capabilities.get( "app" ) );
-		DCapabilities.setCapability( "appWaitActivity", Capabilities.get("appWaitActivity") );
+		URL url = new URL( Values.get("URL").toString() );
 		
-		Driver = new AndroidDriver<MobileElement> ( url , DCapabilities );
+		DesiredCapabilities Capabilities = new DesiredCapabilities();
+		Capabilities.setCapability( "platformName" , Values.get( "platformName" ).toString() );
+		Capabilities.setCapability( "automationName" , Values.get( "automationName" ).toString() );
+		Capabilities.setCapability( "udid" , Device );
+		Capabilities.setCapability( "app" , Values.get( "app" ).toString() );
+		Capabilities.setCapability( "appWaitActivity", Values.get("appWaitActivity").toString() );
+		
+		Driver = new AndroidDriver<MobileElement> ( url , Capabilities );
 		
 		Driver.manage().timeouts().implicitlyWait( Timeout, TimeUnit.MILLISECONDS );
 		Wait = new WebDriverWait( Driver, Polling );
@@ -43,5 +46,15 @@ public class Uitilities
 	protected MobileElement findByText(String Text)
 	{
 		return (MobileElement) Driver.findElementByXPath("//*[@text='"+Text+"']");
+	}
+	
+	
+	protected JSONObject readProperties(String file) throws IOException, ParseException
+	{
+		FileReader DesiredCapabilities = new FileReader( file );
+		JSONObject JSON = (JSONObject) new JSONParser().parse( DesiredCapabilities );
+		JSONObject Properties = (JSONObject) JSON.get("DesiredCapabilities");
+		
+		return Properties;
 	}
 }

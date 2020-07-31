@@ -26,7 +26,7 @@ public class Pages
 	
 	
 	@FindBy(id="com.cleartrip.android:id/bottom_navigation_bar_item_container")
-	public WebElement Navigation_Items;
+	public List<WebElement> Navigation_Items;
 	
 	
 	@FindBy(xpath="//*[@*='com.cleartrip.android:id/ctActionBar']/android.widget.TextView")

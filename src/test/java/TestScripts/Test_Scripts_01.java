@@ -32,7 +32,7 @@ public class Test_Scripts_01 extends Uitilities
 		Thread.sleep(100);
 
 		POM.Search_Edit.sendKeys(City);
-		Thread.sleep(200);
+		Thread.sleep(500);
 	}
 
 	
@@ -59,12 +59,12 @@ public class Test_Scripts_01 extends Uitilities
 		
 		Wait.until(ExpectedConditions.elementToBeClickable(POM.AutoSuggestedCities.get(0)));
 		POM.AutoSuggestedCities.get(0).click();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 	}
 	
 	
 	@Then("^Navigate back to the dash board$")
-	public void Navigate_back_to_the_dash_board() 
+	public void Navigate_back_to_the_dash_board() throws InterruptedException 
 	{
 		POM = new Pages(Driver);
 		Action = new MobileActions(Driver);
@@ -72,6 +72,7 @@ public class Test_Scripts_01 extends Uitilities
 		Wait.until(ExpectedConditions.elementToBeClickable(POM.Go_Back));
 		POM.Go_Back.click();
 		
+		Thread.sleep(1000);
 		Wait.until(ExpectedConditions.visibilityOfAllElements(POM.Navigation_Items));
 		
 		Action.scrollUp(4);

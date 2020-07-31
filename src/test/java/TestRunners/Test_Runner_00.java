@@ -10,10 +10,8 @@ import cucumber.api.junit.Cucumber;
 	features = "src\\test\\java\\Features",
 	glue = { "TestScripts" },
 	monochrome = true,
-	dryRun = false,
-	format = { "pretty",
-			"html:target/Results",
-			"junit:target/Results/Cucumber.html" }
+	dryRun = true,
+	plugin = { "pretty:target/Reports/Pretty.txt","html:target/Reports" }
 )
 
 public class Test_Runner_00 {
