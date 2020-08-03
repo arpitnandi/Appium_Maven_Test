@@ -19,11 +19,12 @@ public class Uitilities
 {
 	protected static AppiumDriver<MobileElement> Driver;
 	protected static WebDriverWait Wait;
+	private String properties = "/src/test/java/JSON_Properties/TestProperties.json";
 	
 	
 	protected AppiumDriver<MobileElement> launchSession(String Device, int Timeout, int Polling ) throws InterruptedException, IOException, ParseException
 	{
-		JSONObject Values = this.readProperties( System.getProperty("user.dir") + "/src/test/java/JSON_Properties/TestProperties.json" );
+		JSONObject Values = this.readProperties( System.getProperty("user.dir") + properties );
 		
 		URL url = new URL( Values.get("URL").toString() );
 		
