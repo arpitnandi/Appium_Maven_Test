@@ -124,21 +124,19 @@
       </plugin>
       <plugin>
         <groupId>net.masterthought</groupId>
-        <artifactId>cucumber-reporting</artifactId>
-        <version>4.9.0</version>
+        <artifactId>maven-cucumber-reporting</artifactId>
+        <version>2.8.0</version>
         <executions>
           <execution>
-            <id>Execution</id>
+            <id>execution</id>
             <phase>verify</phase>
             <goals>
               <goal>generate</goal>
             </goals>
             <configuration>
-              <projectName>cucumber-jvm-example</projectName>
-              <outputDirectory>$(project.build.directory)/cucumber-jvm-report</outputDirectory>
+              <projectName>Appium_Maven_Test</projectName>
+              <outputDirectory>$(project.build.directory)/Maven-cucumber-reports</outputDirectory>
               <cucumberOutput>$(project.build.directory)/cucumber.json</cucumberOutput>
-              <skippedFails>true</skippedFails>
-              <enableFlashcharts>true</enableFlashcharts>
               <buildNumber>001</buildNumber>
             </configuration>
           </execution>

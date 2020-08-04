@@ -1,8 +1,8 @@
-Feature: Select city for tour 2
+Feature: Select city for tour 3
 
   Scenario Outline: Slide and select city from dash board
     Given Session started on Device
-    | Device | emulator-5558 |
+    | Device | emulator-5556 |
     When Started with dash board
     Then Slide and click on the <City> block
     And Verify the name of the selected <City>
@@ -11,12 +11,12 @@ Feature: Select city for tour 2
        
     Examples:
     | City      |
-    | MUMBAI    |
+    | GOA       |
     
     
-  Scenario Outline: Select city from All Cities search 2
+  Scenario Outline: Select city from All Cities search 3
     Given Session started on Device
-    | Device | emulator-5554 |
+    | Device | emulator-5558 |
     When Started with dash board
     Then Scroll to Button and click on it
     | Button | SEE ALL CITIES |
@@ -29,5 +29,5 @@ Feature: Select city for tour 2
        
     Examples:
     | City      |
-    | GOA       |
+    | KOLKATA   |
     

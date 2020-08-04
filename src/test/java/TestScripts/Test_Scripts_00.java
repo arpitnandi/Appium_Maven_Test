@@ -16,19 +16,14 @@ import ProjectUtils.*;
 
 public class Test_Scripts_00 extends Uitilities
 {
-	public String Emulator = "emulator-5554";
-	public String Galaxy = "Galaxy_Nexus_API_22";
-	public String Pixel = "Pixel_API_29";
-	
-	
 	private Pages POM;
 	private MobileActions Action;
 	
 	
-	@Given("^Session is started$")
-	public void Session_is_started() throws InterruptedException, IOException, ParseException
+	@Given("^Session started on Device$")
+	public void Session_started_on_Device(Map<String,String> Table) throws InterruptedException, IOException, ParseException
 	{
-		Driver = launchSession(Emulator,15000, 5000);
+		Driver = launchSession(Table.get("Device"), 15000, 5000);
 	}
 	
 	
@@ -46,14 +41,14 @@ public class Test_Scripts_00 extends Uitilities
 
 	
 	@Given("^Slide and click on the (.*) block$")
-	public void Slide_to_the_City_block_from_dash_board(String Name) throws InterruptedException
+	public void Slide_to_the_City_block_from_dash_board(String City) throws InterruptedException
 	{
 		POM = new Pages(Driver);
 		Action = new MobileActions(Driver);
 
 		Thread.sleep(1000);
 		Wait.until(ExpectedConditions.visibilityOf(POM.Indian_Cities.get(2)));
-		Action.slideAndSelectOne(POM.Indian_Cities, Name);
+		Action.slideAndSelectOne(POM.Indian_Cities, City);
 	}
 
 	
@@ -67,17 +62,17 @@ public class Test_Scripts_00 extends Uitilities
 	}
 	
 	
-	@Then("^Scroll to Name button and click on it$")
-	public void Scroll_to_Name_button_and_click_on_it(Map<String,String> Data) throws InterruptedException
+	@Then("^Scroll to Button and click on it$")
+	public void Scroll_to_Button_and_click_on_it(Map<String,String> Table) throws InterruptedException
 	{
-		String Name = Data.get("Name");
+		String Button = Table.get("Button");
 		
 		Action = new MobileActions(Driver);
 		
 		Action.scrollDown(4);
 		
-		Wait.until(ExpectedConditions.elementToBeClickable(super.findByText(Name)));
-		super.findByText(Name).click();
+		Wait.until(ExpectedConditions.elementToBeClickable(super.findByText(Button)));
+		super.findByText(Button).click();
 		Thread.sleep(1000);
 	}
 }

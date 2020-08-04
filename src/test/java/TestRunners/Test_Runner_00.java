@@ -10,7 +10,7 @@ import cucumber.api.junit.Cucumber;
 	features = "src\\test\\java\\Features",
 	glue = { "TestScripts" },
 	monochrome = true,
-	dryRun = true,
+	dryRun = false,
 	plugin = { "pretty:target/Reports/Pretty.txt","html:target/Reports" }
 )
 

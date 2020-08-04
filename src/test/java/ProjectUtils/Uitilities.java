@@ -19,26 +19,28 @@ public class Uitilities
 {
 	protected static AppiumDriver<MobileElement> Driver;
 	protected static WebDriverWait Wait;
-	private String properties = "/src/test/java/JSON_Properties/TestProperties.json";
+	private String JSON_Properties = "/src/test/java/JSON_Properties/";
+	private String PropertyFileName = "TestProperties.json";
 	
 	
-	protected AppiumDriver<MobileElement> launchSession(String Device, int Timeout, int Polling ) throws InterruptedException, IOException, ParseException
+	protected AppiumDriver<MobileElement> launchSession(String udid, int Timeout, int Polling ) throws InterruptedException, IOException, ParseException
 	{
-		JSONObject Values = this.readProperties( System.getProperty("user.dir") + properties );
+		JSONObject Array = this.getJsonObject(System.getProperty("user.dir")+JSON_Properties+PropertyFileName);
+		JSONObject Value = (JSONObject) Array.get("DesiredCapabilities");
 		
-		URL url = new URL( Values.get("URL").toString() );
+		URL url = new URL(Value.get("URL").toString());
 		
 		DesiredCapabilities Capabilities = new DesiredCapabilities();
-		Capabilities.setCapability( "platformName" , Values.get( "platformName" ).toString() );
-		Capabilities.setCapability( "automationName" , Values.get( "automationName" ).toString() );
-		Capabilities.setCapability( "udid" , Device );
-		Capabilities.setCapability( "app" , Values.get( "app" ).toString() );
-		Capabilities.setCapability( "appWaitActivity", Values.get("appWaitActivity").toString() );
+		Capabilities.setCapability("platformName", Value.get("platformName"));
+		Capabilities.setCapability("automationName", Value.get("automationName"));
+		Capabilities.setCapability("udid", udid);
+		Capabilities.setCapability("app", Value.get("app"));
+		Capabilities.setCapability("appWaitActivity", Value.get("appWaitActivity"));
 		
-		Driver = new AndroidDriver<MobileElement> ( url , Capabilities );
+		Driver = new AndroidDriver<MobileElement> (url, Capabilities);
 		
-		Driver.manage().timeouts().implicitlyWait( Timeout, TimeUnit.MILLISECONDS );
-		Wait = new WebDriverWait( Driver, Polling );
+		Driver.manage().timeouts().implicitlyWait(Timeout, TimeUnit.MILLISECONDS);
+		Wait = new WebDriverWait(Driver, Polling);
 		
 		return Driver;
 	}
@@ -50,12 +52,11 @@ public class Uitilities
 	}
 	
 	
-	protected JSONObject readProperties(String file) throws IOException, ParseException
+	protected JSONObject getJsonObject(String FilePath) throws IOException, ParseException
 	{
-		FileReader DesiredCapabilities = new FileReader( file );
-		JSONObject JSON = (JSONObject) new JSONParser().parse( DesiredCapabilities );
-		JSONObject Properties = (JSONObject) JSON.get("DesiredCapabilities");
+		FileReader JsonContaxt = new FileReader(FilePath);
+		JSONObject Value = (JSONObject) new JSONParser().parse(JsonContaxt);
 		
-		return Properties;
+		return Value;
 	}
 }

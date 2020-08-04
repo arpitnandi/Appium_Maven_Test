@@ -3,7 +3,6 @@ package TestScripts;
 
 import java.awt.AWTException;
 import java.util.List;
-import java.util.Map;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
@@ -17,7 +16,6 @@ import cucumber.api.java.en.Then;
 
 public class Test_Scripts_01 extends Uitilities
 {
-	protected Map<String, String> capabilities;
 	protected Pages POM;
 	protected MobileActions Action;
 	

@@ -1,10 +1,10 @@
 {
     "DesiredCapabilities" : 
     {
-		"URL" : "http://localhost:4723/wd/hub",
-		"platformName" : "Android",
-		"automationName" : "UiAutomator2",
-		"app" : "C:/Users/Admin/git/Appium_Maven_Test/cleartrip_19.2.1.apk",
-		"appWaitActivity" : "com.cleartrip.android.common.activities.CleartripHomeActivity"
-	}
+        "URL" : "http://localhost:4723/wd/hub",
+	"platformName" : "Android",
+	"automationName" : "UiAutomator2",
+	"app" : "C:/Users/Admin/git/Appium_Maven_Test/Application/cleartrip_19.2.1.apk",
+	"appWaitActivity" : "com.cleartrip.android.common.activities.CleartripHomeActivity"
+    }
 }
